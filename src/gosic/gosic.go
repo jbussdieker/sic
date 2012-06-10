@@ -7,7 +7,7 @@ package gosic
 */
 import "C"
 
-func Init() {
-	C.SicInit()
+func Init() string {
+	return C.GoString(C.SicInit())
 }
 
