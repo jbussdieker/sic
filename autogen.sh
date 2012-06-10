@@ -1,0 +1,1 @@
+aclocal && autoheader && libtoolize && touch NEWS README AUTHORS ChangeLog && automake --add-missing && autoconf
