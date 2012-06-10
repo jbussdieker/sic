@@ -22,4 +22,13 @@ AC_PROG_LIBTOOL
 
 # Checks for library functions.
 
+LIBSIC_DLL_IMPORT=
+case "$host" in
+	*-*-cygwin* | *-*-mingw* )
+		if test X"$enable_shared" = Xyes; then
+			AC_TRY_LINK_FUNC([libsic_is_dll], [LIBSIC_DLL_IMPORT=-DLIBSIC_DLL_IMPORT])
+		fi
+	;;
+esac
+AC_SUBST(LIBSIC_DLL_IMPORT)
 AC_OUTPUT
